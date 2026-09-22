@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Carrito' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <!-- CART -->
+  <section class="cart-page">
+    <div class="container">
+      <h1>Tu carrito (<%= cartItems.length %>)</h1>
+
+      <div class="cart-layout">
+
+        <!-- Items -->
+        <div class="cart-items">
+          <% cartItems.forEach(function(item) { %>
+            <div class="cart-item">
+              <div class="cart-item-img"><%= item.image || '🌿' %></div>
+              <div class="cart-item-details">
+                <h3><%= item.name %></h3>
+                <p class="variant"><%= item.colors && item.colors.length ? item.colors[item.colors.length - 1] : '' %></p>
+                <div class="cart-item-bottom">
+                  <div class="quantity-selector">
+                    <button type="button">−</button>
+                    <span class="qty-value"><%= item.qty %></span>
+                    <button type="button">+</button>
+                  </div>
+                  <span class="item-price"><%= formatPrice(item.price * item.qty) %></span>
+                </div>
+                <a href="#" class="remove-link">Quitar</a>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+
+        <!-- Resumen -->
+        <div class="cart-summary">
+          <h2>Resumen</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span><%= formatPrice(subtotal) %></span>
+          </div>
+          <div class="summary-row">
+            <span>Envío</span>
+            <span><%= formatPrice(shipping) %></span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="amount"><%= formatPrice(total) %></span>
+          </div>
+          <a href="#" class="btn btn-primary btn-full" style="margin-top: 20px;">Finalizar compra</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

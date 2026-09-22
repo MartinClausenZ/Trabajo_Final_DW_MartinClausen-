@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: product.name }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Inicio</a>
+      <span class="separator">/</span>
+      <a href="/products">Productos</a>
+      <span class="separator">/</span>
+      <a href="/products?cat=<%= product.category %>"><%= product.category.charAt(0).toUpperCase() + product.category.slice(1) %></a>
+      <span class="separator">/</span>
+      <span><%= product.name %></span>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-detail-grid">
+
+        <!-- Galería -->
+        <div class="product-gallery">
+          <div class="product-main-img"><%= product.image || '🌿' %></div>
+          <div class="product-thumbnails">
+            <div class="thumb active"><%= product.image || '🌿' %></div>
+            <div class="thumb">🍃</div>
+            <div class="thumb">🌱</div>
+            <div class="thumb">📦</div>
+          </div>
+        </div>
+
+        <!-- Info principal -->
+        <div class="product-main-info">
+          <div class="product-main-actions">
+            <h1><%= product.name %></h1>
+            <div class="action-btns">
+              <a href="/products/<%= product.id %>/edit" class="btn btn-secondary btn-sm" title="Editar">✏️ Editar</a>
+              <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-delete btn-sm" title="Eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?')">🗑️ Eliminar</button>
+              </form>
+            </div>
+          </div>
+          <div class="product-rating"><%= stars(product.rating) %> <span>(<%= product.reviews %> reseñas)</span></div>
+          <p class="price"><%= formatPrice(product.price) %></p>
+
+          <!-- Colores / variantes -->
+          <% if (product.colors && product.colors.length) { %>
+            <div class="product-variants">
+              <p class="variants-label">Variantes disponibles:</p>
+              <ul class="variants-list">
+                <% product.colors.forEach(function(c) { %>
+                  <li><%= c %></li>
+                <% }); %>
+              </ul>
+            </div>
+          <% } %>
+
+          <!-- Guía de cuidado (solo para plantas) -->
+          <% if (product.category === 'plantas') { %>
+            <div class="care-info">
+              <h3>Guía de cuidado</h3>
+              <div class="care-levels">
+                <div class="care-item">
+                  <div class="care-icon">💧</div>
+                  <span class="care-value">Moderado</span>
+                  <span class="care-label">Riego</span>
+                </div>
+                <div class="care-item">
+                  <div class="care-icon">☀️</div>
+                  <span class="care-value">Indirecta</span>
+                  <span class="care-label">Luz</span>
+                </div>
+                <div class="care-item">
+                  <div class="care-icon">🌿</div>
+                  <span class="care-value">Intermedio</span>
+                  <span class="care-label">Dificultad</span>
+                </div>
+                <div class="care-item">
+                  <div class="care-icon">🧪</div>
+                  <span class="care-value">Media</span>
+                  <span class="care-label">Humedad</span>
+                </div>
+              </div>
+            </div>
+          <% } %>
+
+          <!-- Selector de cantidad -->
+          <div class="quantity-selector">
+            <button type="button">−</button>
+            <span class="qty-value">1</span>
+            <button type="button">+</button>
+          </div>
+
+          <!-- Botón agregar al carrito -->
+          <a href="/products/cart" class="btn btn-primary btn-full">Agregar al carrito</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPCIÓN -->
+  <section class="product-description">
+    <div class="container">
+      <h2>Descripción y cuidados</h2>
+      <p><%= product.description %></p>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS RELACIONADOS -->
+  <% if (related.length) { %>
+    <section class="related-products">
+      <div class="container">
+        <h2>También te puede interesar</h2>
+        <div class="products-grid">
+          <% related.forEach(function(product) { %>
+            <%- include('../partials/productCard', { product }) %>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+  <% } %>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

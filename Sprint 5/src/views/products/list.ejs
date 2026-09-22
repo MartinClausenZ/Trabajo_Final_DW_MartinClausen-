@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Productos' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section class="product-list-page">
+    <div class="container">
+      <div class="list-header">
+        <h1><%= activeCat ? activeCat.charAt(0).toUpperCase() + activeCat.slice(1) : 'Todos los productos' %></h1>
+        <a href="/products/create" class="btn btn-accent">+ Crear producto</a>
+      </div>
+
+      <!-- Filtros de categoría -->
+      <div class="category-filters">
+        <a href="/products" class="filter-btn <%= !activeCat ? 'active' : '' %>">Todos</a>
+        <a href="/products?cat=plantas" class="filter-btn <%= activeCat === 'plantas' ? 'active' : '' %>">Plantas</a>
+        <a href="/products?cat=macetas" class="filter-btn <%= activeCat === 'macetas' ? 'active' : '' %>">Macetas</a>
+        <a href="/products?cat=decoracion" class="filter-btn <%= activeCat === 'decoracion' ? 'active' : '' %>">Decoración</a>
+        <a href="/products?cat=accesorios" class="filter-btn <%= activeCat === 'accesorios' ? 'active' : '' %>">Accesorios</a>
+      </div>
+
+      <div class="products-grid">
+        <% products.forEach(function(product) { %>
+          <%- include('../partials/productCard', { product }) %>
+        <% }); %>
+      </div>
+
+      <% if (products.length === 0) { %>
+        <div class="empty-state">
+          <p>🌱 No hay productos en esta categoría todavía.</p>
+          <a href="/products/create" class="btn btn-primary">Crear el primero</a>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="product-card">
+  <a href="/products/<%= product.id %>">
+    <div class="product-img">
+      <span><%= product.image || '🌿' %></span>
+      <% if (product.badge) { %>
+        <span class="product-badge"><%= product.badge %></span>
+      <% } %>
+    </div>
+    <div class="product-info">
+      <h3><%= product.name %></h3>
+      <p class="product-variant"><%= product.colors && product.colors.length ? product.colors[product.colors.length - 1] : '' %></p>
+      <div class="product-rating"><%= stars(product.rating) %> <span>(<%= product.reviews %>)</span></div>
+      <p class="product-price"><%= formatPrice(product.price) %></p>
+    </div>
+  </a>
+</div>

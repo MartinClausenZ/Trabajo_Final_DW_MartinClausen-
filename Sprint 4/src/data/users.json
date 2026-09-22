@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "firstName": "Valentina",
+    "lastName": "González",
+    "email": "valentina@verdia.com",
+    "password": "Verdia2024!",
+    "category": "admin",
+    "image": "👤"
+  },
+  {
+    "id": 2,
+    "firstName": "Mateo",
+    "lastName": "Rodríguez",
+    "email": "mateo@gmail.com",
+    "password": "Mateo1234",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 3,
+    "firstName": "Sofía",
+    "lastName": "López",
+    "email": "sofia@outlook.com",
+    "password": "Sofia5678",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 4,
+    "firstName": "Thiago",
+    "lastName": "Martínez",
+    "email": "thiago@yahoo.com",
+    "password": "Thiago9012",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 5,
+    "firstName": "Luna",
+    "lastName": "García",
+    "email": "luna@gmail.com",
+    "password": "Luna3456",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 6,
+    "firstName": "Benjamín",
+    "lastName": "Fernández",
+    "email": "benja@verdia.com",
+    "password": "Benja7890",
+    "category": "admin",
+    "image": "👤"
+  },
+  {
+    "id": 7,
+    "firstName": "Catalina",
+    "lastName": "Torres",
+    "email": "catalina@hotmail.com",
+    "password": "Cata1122",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 8,
+    "firstName": "Santino",
+    "lastName": "Díaz",
+    "email": "santino@gmail.com",
+    "password": "Santi3344",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 9,
+    "firstName": "Mía",
+    "lastName": "Sánchez",
+    "email": "mia@outlook.com",
+    "password": "Mia5566",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 10,
+    "firstName": "Joaquín",
+    "lastName": "Romero",
+    "email": "joaquin@yahoo.com",
+    "password": "Joaco7788",
+    "category": "user",
+    "image": "👤"
+  }
+]
