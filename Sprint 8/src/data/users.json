@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "firstName": "Valentina",
+    "lastName": "González",
+    "email": "valentina@verdia.com",
+    "password": "$2b$10$NLT/LarbVHYl4/Eo5bXz3.8yWvL84koj6UZXia056FOB82M82yGj.",
+    "category": "admin",
+    "image": "👤"
+  },
+  {
+    "id": 2,
+    "firstName": "Mateo",
+    "lastName": "Rodríguez",
+    "email": "mateo@gmail.com",
+    "password": "$2b$10$VibEXA6ptpZLzCql16kfMu1cbSZyEAPsUDrrKosjmwh.DhOetQztq",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 3,
+    "firstName": "Sofía",
+    "lastName": "López",
+    "email": "sofia@outlook.com",
+    "password": "$2b$10$llTqVLg1TNNz.aTKV.m5muPNSkWxhC9ECQYXyzLTz3NTjttoaoNIi",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 4,
+    "firstName": "Thiago",
+    "lastName": "Martínez",
+    "email": "thiago@yahoo.com",
+    "password": "$2b$10$IhccIIRZX3PICBHV5VHQAuldKrE0B6U7HIHO1nfr1Ke1oFM03VZc.",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 5,
+    "firstName": "Luna",
+    "lastName": "García",
+    "email": "luna@gmail.com",
+    "password": "$2b$10$g2nZfJ9VdlNAs67L2AKLhOpH1s5LIfETWJC/mOeu.cz3H7ec5qGg.",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 6,
+    "firstName": "Benjamín",
+    "lastName": "Fernández",
+    "email": "benja@verdia.com",
+    "password": "$2b$10$2dqEBgSj3U.iP0IEoOjoceUgsOurX6goA/JxnpcQvRM7acyCktmUC",
+    "category": "admin",
+    "image": "👤"
+  },
+  {
+    "id": 7,
+    "firstName": "Catalina",
+    "lastName": "Torres",
+    "email": "catalina@hotmail.com",
+    "password": "$2b$10$p4rBD1JNIsLS0yk.cFRFsuurJKRA1wot0zWQdiU9xXBd/zHIm8rP2",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 8,
+    "firstName": "Santino",
+    "lastName": "Díaz",
+    "email": "santino@gmail.com",
+    "password": "$2b$10$9qoCnw/MVzar6gYPlSCNeu952Hg3cNy.lDcXkJ.0WJovqzhWy6gaq",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 9,
+    "firstName": "Mía",
+    "lastName": "Sánchez",
+    "email": "mia@outlook.com",
+    "password": "$2b$10$g5.qs5APyl9A1zvz0LoqZeWQVQfYZ1figInxAOhrFQBP2iJ.rR2uO",
+    "category": "user",
+    "image": "👤"
+  },
+  {
+    "id": 10,
+    "firstName": "Joaquín",
+    "lastName": "Romero",
+    "email": "joaquin@yahoo.com",
+    "password": "$2b$10$DyTCyYkz9nT4pCbw8CDhbuVS6rTfMXsoIg1x.gZs27ac2H9WiZbu2",
+    "category": "user",
+    "image": "👤"
+  }
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Crear cuenta' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section class="auth-page">
+    <div class="container">
+      <div class="auth-card">
+        <h1>Crear cuenta</h1>
+
+        <form action="/users/register" method="POST" enctype="multipart/form-data" id="registerForm" novalidate>
+
+          <div class="form-group">
+            <label for="firstName">Nombre</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Tu nombre" value="<%= old && old.firstName || '' %>" required>
+            <% if (errors && errors.firstName) { %>
+              <p class="error-message visible"><%= errors.firstName %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Apellido</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Tu apellido" value="<%= old && old.lastName || '' %>" required>
+            <% if (errors && errors.lastName) { %>
+              <p class="error-message visible"><%= errors.lastName %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" value="<%= old && old.email || '' %>" required>
+            <% if (errors && errors.email) { %>
+              <p class="error-message visible"><%= errors.email %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+            <% if (errors && errors.password) { %>
+              <p class="error-message visible"><%= errors.password %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar contraseña</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repetí tu contraseña" required>
+            <% if (errors && errors.confirmPassword) { %>
+              <p class="error-message visible"><%= errors.confirmPassword %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Foto de perfil</label>
+            <input type="file" id="image" name="image" accept="image/*" style="font-size:0.9rem;">
+            <p class="field-hint">Opcional. Si no subís imagen se usará un avatar por defecto.</p>
+            <% if (errors && errors.image) { %>
+              <p class="error-message visible"><%= errors.image %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" required>
+              Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Crear cuenta</button>
+
+        </form>
+
+        <div class="divider">o</div>
+
+        <button type="button" class="btn-google">
+          <span>🔵</span> Continuar con Google
+        </button>
+
+        <p class="auth-footer">
+          ¿Ya tenés cuenta? <a href="/users/login">Iniciar sesión</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+  <script src="/js/validations-register.js"></script>
+
+</body>
+</html>

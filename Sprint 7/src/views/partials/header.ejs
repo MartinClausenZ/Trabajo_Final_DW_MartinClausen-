@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">verdia<span>.</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="/products?cat=plantas">Plantas</a>
+        <a href="/products?cat=macetas">Macetas</a>
+        <a href="/products?cat=decoracion">Decoración</a>
+        <a href="/products?cat=accesorios">Accesorios</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" placeholder="Buscar plantas, macetas...">
+        </div>
+        <% if (user) { %>
+          <div class="user-menu">
+            <a href="/users/profile" class="icon-btn" title="Mi perfil">
+              <% if (user.image && user.image.includes('.')) { %>
+                <img src="/img/users/<%= user.image %>" alt="<%= user.firstName %>" class="avatar-sm">
+              <% } else { %>
+                <%= user.image || '👤' %>
+              <% } %>
+            </a>
+            <span class="user-greeting">Hola, <%= user.firstName %></span>
+          </div>
+          <form action="/users/logout" method="POST" class="logout-form">
+            <button type="submit" class="icon-btn" title="Cerrar sesión">📤</button>
+          </form>
+        <% } else { %>
+          <a href="/users/login" class="icon-btn" title="Mi cuenta">👤</a>
+        <% } %>
+        <a href="/products/cart" class="icon-btn" title="Carrito">
+          🛒
+          <span class="cart-count">3</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+</script>

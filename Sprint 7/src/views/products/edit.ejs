@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Editar ' + product.name }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section class="auth-page">
+    <div class="container">
+      <div class="auth-card" style="max-width: 560px;">
+        <h1>Editar producto</h1>
+
+        <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="productForm" novalidate>
+
+          <div class="form-group">
+            <label for="name">Nombre del producto</label>
+            <input type="text" id="name" name="name" value="<%= product.name %>" required>
+            <% if (errors && errors.name) { %>
+              <p class="error-message visible"><%= errors.name %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea id="description" name="description" rows="4" required style="width:100%; padding:12px 14px; border:1px solid var(--gris-medio); border-radius:var(--radius); font-size:0.9rem; resize:vertical; outline:none; font-family:inherit;"><%= product.description %></textarea>
+            <% if (errors && errors.description) { %>
+              <p class="error-message visible"><%= errors.description %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="image">Imagen</label>
+            <input type="file" id="image" name="image" accept="image/*" style="font-size:0.9rem;">
+            <p class="field-hint">Imagen actual: <%= product.image %></p>
+            <% if (errors && errors.image) { %>
+              <p class="error-message visible"><%= errors.image %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="category_id">Categoría</label>
+            <select id="category_id" name="category_id" required style="width:100%; padding:12px 14px; border:1px solid var(--gris-medio); border-radius:var(--radius); font-size:0.9rem; outline:none; background-color:var(--base); color:var(--texto);">
+              <option value="">Seleccioná una categoría</option>
+              <% categories.forEach(function(cat) { %>
+                <option value="<%= cat.id %>" <%= product.category_id == cat.id ? 'selected' : '' %>><%= cat.name.charAt(0).toUpperCase() + cat.name.slice(1) %></option>
+              <% }); %>
+            </select>
+            <% if (errors && errors.category_id) { %>
+              <p class="error-message visible"><%= errors.category_id %></p>
+            <% } %>
+          </div>
+
+          <div class="form-group">
+            <label for="colors">Colores / Tamaños</label>
+            <input type="text" id="colors" name="colors" value="<%= product.colors ? product.colors.join(', ') : '' %>">
+            <p class="field-hint">Separá las variantes con coma</p>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Precio ($)</label>
+            <input type="number" id="price" name="price" value="<%= product.price %>" min="0" step="1" required>
+            <% if (errors && errors.price) { %>
+              <p class="error-message visible"><%= errors.price %></p>
+            <% } %>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Guardar cambios</button>
+
+        </form>
+
+        <p class="auth-footer" style="margin-top: 16px;">
+          <a href="/products">← Volver al listado</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+  <script src="/js/validations-product.js"></script>
+
+</body>
+</html>

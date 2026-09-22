@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('partials/head', { title: 'Inicio' }) %>
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Llená tu casa de verde</h1>
+      <p>Plantas curadas + guía de cuidado incluida. Todo lo que necesitás para transformar tu hogar.</p>
+      <a href="/products" class="btn btn-primary">Ver catálogo</a>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categories">
+    <div class="container">
+      <h2>Explorá por categoría</h2>
+      <div class="categories-grid">
+        <a href="/products?cat=plantas" class="category-card">
+          <div class="category-img">🌿</div>
+          <h3>Plantas</h3>
+        </a>
+        <a href="/products?cat=macetas" class="category-card">
+          <div class="category-img">🏺</div>
+          <h3>Macetas</h3>
+        </a>
+        <a href="/products?cat=decoracion" class="category-card">
+          <div class="category-img">🕯️</div>
+          <h3>Decoración</h3>
+        </a>
+        <a href="/products?cat=accesorios" class="category-card">
+          <div class="category-img">🧪</div>
+          <h3>Accesorios</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="featured">
+    <div class="container">
+      <h2>Destacados</h2>
+      <div class="products-grid">
+        <% featured.forEach(function(product) { %>
+          <%- include('partials/productCard', { product }) %>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Sumate al club verde</h2>
+      <p>Recibí tips de cuidado, novedades y ofertas exclusivas en tu mail.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Tu email" required>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

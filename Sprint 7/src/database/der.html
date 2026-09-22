@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>DER - Verdia</title>
+<style>
+  @page { size: A4 landscape; margin: 20px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #FAFAFA;
+    color: #2F3E2E;
+    padding: 30px;
+  }
+  h1 {
+    text-align: center;
+    color: #4A7C59;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  .entity {
+    border: 2px solid #4A7C59;
+    border-radius: 10px;
+    background: #FFFFFF;
+    min-width: 220px;
+    max-width: 260px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .entity-header {
+    background: #4A7C59;
+    color: #FFFFFF;
+    padding: 10px 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .entity-header.optional {
+    background: #D98E4A;
+  }
+  .entity-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 14px;
+    border-bottom: 1px solid #E8F0E5;
+    font-size: 0.85rem;
+  }
+  .entity-row:last-child { border-bottom: none; }
+  .entity-row .field { font-weight: 500; }
+  .entity-row .type { color: #888; font-size: 0.8rem; }
+  .entity-row.pk .field::before { content: '🔑 '; font-size: 0.7rem; }
+  .entity-row.fk .field::before { content: '🔗 '; font-size: 0.7rem; }
+  .entity-row.uk .field::after { content: ' ✓'; color: #4A7C59; font-size: 0.7rem; }
+  .legend {
+    margin-top: 30px;
+    padding: 16px 20px;
+    background: #E8F0E5;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+  .legend h3 { color: #4A7C59; margin-bottom: 8px; font-size: 0.95rem; }
+  .legend-item { margin: 4px 0; }
+  .legend-item .symbol { display: inline-block; width: 24px; font-size: 0.8rem; }
+  .relationships {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+  .relationships h3 { color: #4A7C59; margin-bottom: 10px; font-size: 0.95rem; }
+  .rel-item { margin: 6px 0; }
+  .rel-item strong { color: #2F3E2E; }
+  .note-optional {
+    display: inline-block;
+    background: #D98E4A;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+  }
+</style>
+</head>
+<body>
+
+<h1>🌿 Verdia — Diagrama de Entidad-Relación</h1>
+<p class="subtitle">Sprint 6 — Migración a Base de Datos SQL con Sequelize ORM</p>
+
+<div class="diagram">
+
+  <!-- CATEGORIES -->
+  <div class="entity">
+    <div class="entity-header">categories</div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row uk"><span class="field">name</span><span class="type">VARCHAR(100)</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+  <!-- USERS -->
+  <div class="entity">
+    <div class="entity-header">users</div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row"><span class="field">first_name</span><span class="type">VARCHAR(100)</span></div>
+    <div class="entity-row"><span class="field">last_name</span><span class="type">VARCHAR(100)</span></div>
+    <div class="entity-row uk"><span class="field">email</span><span class="type">VARCHAR(150)</span></div>
+    <div class="entity-row"><span class="field">password</span><span class="type">VARCHAR(255)</span></div>
+    <div class="entity-row"><span class="field">category</span><span class="type">VARCHAR(50)</span></div>
+    <div class="entity-row"><span class="field">image</span><span class="type">VARCHAR(255)</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="entity">
+    <div class="entity-header">products</div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row"><span class="field">name</span><span class="type">VARCHAR(200)</span></div>
+    <div class="entity-row"><span class="field">description</span><span class="type">TEXT</span></div>
+    <div class="entity-row"><span class="field">image</span><span class="type">VARCHAR(255)</span></div>
+    <div class="entity-row"><span class="field">price</span><span class="type">DECIMAL(10,2)</span></div>
+    <div class="entity-row"><span class="field">rating</span><span class="type">DECIMAL(2,1)</span></div>
+    <div class="entity-row"><span class="field">reviews</span><span class="type">INT</span></div>
+    <div class="entity-row"><span class="field">badge</span><span class="type">VARCHAR(100)</span></div>
+    <div class="entity-row fk"><span class="field">category_id</span><span class="type">INT FK</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+  <!-- PRODUCT_COLORS -->
+  <div class="entity">
+    <div class="entity-header">product_colors</div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row"><span class="field">color</span><span class="type">VARCHAR(100)</span></div>
+    <div class="entity-row fk"><span class="field">product_id</span><span class="type">INT FK</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+  <!-- CARTS -->
+  <div class="entity">
+    <div class="entity-header optional">carts <span class="note-optional">opcional</span></div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row fk"><span class="field">user_id</span><span class="type">INT FK</span></div>
+    <div class="entity-row"><span class="field">total</span><span class="type">DECIMAL(10,2)</span></div>
+    <div class="entity-row"><span class="field">status</span><span class="type">VARCHAR(50)</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+  <!-- CART_ITEMS -->
+  <div class="entity">
+    <div class="entity-header optional">cart_items <span class="note-optional">opcional</span></div>
+    <div class="entity-row pk"><span class="field">id</span><span class="type">INT AI PK</span></div>
+    <div class="entity-row fk"><span class="field">cart_id</span><span class="type">INT FK</span></div>
+    <div class="entity-row fk"><span class="field">product_id</span><span class="type">INT FK</span></div>
+    <div class="entity-row"><span class="field">quantity</span><span class="type">INT</span></div>
+    <div class="entity-row"><span class="field">price</span><span class="type">DECIMAL(10,2)</span></div>
+    <div class="entity-row"><span class="field">created_at</span><span class="type">DATETIME</span></div>
+    <div class="entity-row"><span class="field">updated_at</span><span class="type">DATETIME</span></div>
+  </div>
+
+</div>
+
+<div class="relationships">
+  <h3>Relaciones entre entidades</h3>
+  <div class="rel-item"><strong>categories → products</strong> (1:N) — Una categoría tiene muchos productos. FK: products.category_id → categories.id. ON DELETE RESTRICT.</div>
+  <div class="rel-item"><strong>products → product_colors</strong> (1:N) — Un producto tiene muchos colores/variantes. FK: product_colors.product_id → products.id. ON DELETE CASCADE.</div>
+  <div class="rel-item"><strong>users → carts</strong> (1:N) — Un usuario tiene muchos carritos. FK: carts.user_id → users.id. ON DELETE CASCADE. <span class="note-optional">opcional</span></div>
+  <div class="rel-item"><strong>carts → cart_items</strong> (1:N) — Un carrito tiene muchos items. FK: cart_items.cart_id → carts.id. ON DELETE CASCADE. <span class="note-optional">opcional</span></div>
+  <div class="rel-item"><strong>products → cart_items</strong> (1:N) — Un producto puede estar en muchos items de carrito. FK: cart_items.product_id → products.id. ON DELETE RESTRICT. <span class="note-optional">opcional</span></div>
+</div>
+
+<div class="legend">
+  <h3>Leyenda</h3>
+  <div class="legend-item"><span class="symbol">🔑</span> Clave primaria (PK)</div>
+  <div class="legend-item"><span class="symbol">🔗</span> Clave foránea (FK)</div>
+  <div class="legend-item"><span class="symbol">✓</span> Restricción UNIQUE</div>
+  <div class="legend-item"><span class="symbol">AI</span> Auto Increment</div>
+  <div class="legend-item"><span class="note-optional" style="margin:0">opcional</span> Tabla agregada para funcionalidad futura (carrito de compras)</div>
+</div>
+
+</body>
+</html>

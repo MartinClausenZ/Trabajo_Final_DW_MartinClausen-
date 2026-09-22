@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Mi perfil' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section class="auth-page">
+    <div class="container">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <% if (user.image && user.image.includes('.')) { %>
+            <img src="/img/users/<%= user.image %>" alt="<%= user.firstName %>" class="avatar-lg">
+          <% } else { %>
+            <span class="avatar-emoji-lg"><%= user.image || '👤' %></span>
+          <% } %>
+        </div>
+        <h1><%= user.firstName %> <%= user.lastName %></h1>
+        <p class="profile-email"><%= user.email %></p>
+        <span class="profile-badge <%= user.category === 'admin' ? 'badge-admin' : 'badge-user' %>">
+          <%= user.category === 'admin' ? '🔑 Administrador' : '🌿 Miembro' %>
+        </span>
+        <div class="profile-actions">
+          <a href="/users/profile/edit" class="btn btn-secondary">✏️ Editar perfil</a>
+          <form action="/users/logout" method="POST" style="display:inline;">
+            <button type="submit" class="btn btn-delete">Cerrar sesión</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>
