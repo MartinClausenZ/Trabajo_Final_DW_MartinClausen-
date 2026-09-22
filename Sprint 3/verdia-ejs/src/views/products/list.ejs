@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Productos' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section class="product-list-page">
+    <div class="container">
+      <h1>Todos los productos</h1>
+      <div class="products-grid">
+        <%- include('../partials/productCard', { emoji: '🪴', name: 'Monstera Deliciosa', variant: 'Maceta 20cm', rating: '★★★★★', reviews: '24', price: '$8.990', badge: 'Nuevo' }) %>
+        <%- include('../partials/productCard', { emoji: '🌱', name: 'Pothus Dorado', variant: 'Maceta 15cm', rating: '★★★★☆', reviews: '18', price: '$4.590', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🌵', name: 'Cactus San Pedro', variant: 'Maceta 12cm', rating: '★★★★★', reviews: '31', price: '$3.290', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🕯️', name: 'Vela Aromática Bosque', variant: 'Soy wax · 200g', rating: '★★★★☆', reviews: '12', price: '$5.990', badge: '-20%' }) %>
+        <%- include('../partials/productCard', { emoji: '🌿', name: 'Helecho Boston', variant: 'Maceta 18cm', rating: '★★★★☆', reviews: '15', price: '$6.790', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🍃', name: 'Calathea Orbifolia', variant: 'Maceta 16cm', rating: '★★★★★', reviews: '22', price: '$7.490', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🏺', name: 'Maceta Cerámica Nórdica', variant: 'Blanco · 18cm', rating: '★★★★☆', reviews: '9', price: '$5.990', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🪴', name: 'Ficus Lyrata', variant: 'Maceta 24cm', rating: '★★★★★', reviews: '37', price: '$12.990', badge: 'Popular' }) %>
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

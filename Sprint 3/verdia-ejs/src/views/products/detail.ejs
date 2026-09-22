@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Monstera Deliciosa' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Inicio</a>
+      <span class="separator">/</span>
+      <a href="/products">Plantas</a>
+      <span class="separator">/</span>
+      <a href="/products">Luz baja</a>
+      <span class="separator">/</span>
+      <span>Monstera Deliciosa</span>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-detail-grid">
+
+        <!-- Galería -->
+        <div class="product-gallery">
+          <div class="product-main-img">🪴</div>
+          <div class="product-thumbnails">
+            <div class="thumb active">🪴</div>
+            <div class="thumb">🍃</div>
+            <div class="thumb">🌱</div>
+            <div class="thumb">📦</div>
+          </div>
+        </div>
+
+        <!-- Info principal -->
+        <div class="product-main-info">
+          <h1>Monstera Deliciosa</h1>
+          <div class="product-rating">★★★★★ <span>(24 reseñas)</span></div>
+          <p class="price">$8.990</p>
+
+          <!-- Guía de cuidado -->
+          <div class="care-info">
+            <h3>Guía de cuidado</h3>
+            <div class="care-levels">
+              <div class="care-item">
+                <div class="care-icon">💧</div>
+                <span class="care-value">Moderado</span>
+                <span class="care-label">Riego</span>
+              </div>
+              <div class="care-item">
+                <div class="care-icon">☀️</div>
+                <span class="care-value">Indirecta</span>
+                <span class="care-label">Luz</span>
+              </div>
+              <div class="care-item">
+                <div class="care-icon">🌿</div>
+                <span class="care-value">Intermedio</span>
+                <span class="care-label">Dificultad</span>
+              </div>
+              <div class="care-item">
+                <div class="care-icon">🧪</div>
+                <span class="care-value">Media</span>
+                <span class="care-label">Humedad</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selector de cantidad -->
+          <div class="quantity-selector">
+            <button type="button">−</button>
+            <span class="qty-value">1</span>
+            <button type="button">+</button>
+          </div>
+
+          <!-- Botón agregar al carrito -->
+          <a href="/products/cart" class="btn btn-primary btn-full">Agregar al carrito</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPCIÓN Y CUIDADOS -->
+  <section class="product-description">
+    <div class="container">
+      <h2>Descripción y cuidados</h2>
+      <p>La Monstera Deliciosa, también conocida como costilla de Adán, es una de las plantas de interior más icónicas y deseadas. Sus hojas grandes y fenestradas aportan un toque tropical y elegante a cualquier espacio.</p>
+      <p><strong>Riego:</strong> Regá cuando los primeros 3-4 cm de sustrato estén secos. Evitá el encharcamiento para prevenir hongos en las raíces. En invierno, reducí la frecuencia.</p>
+      <p><strong>Luz:</strong> Prefiere luz brillante indirecta. Puede tolerar algo de sombra, pero su crecimiento será más lento y las hojas pueden no desarrollar sus característicos agujeros.</p>
+      <p><strong>Humedad:</strong> Le gusta la humedad ambiente. Si el ambiente es seco, pulverizá sus hojas con agua un par de veces por semana o colocá un humidificador cerca.</p>
+      <p><strong>Temperatura ideal:</strong> Entre 18°C y 30°C. Evitá corrientes de aire frío y temperaturas por debajo de 12°C.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS RELACIONADOS -->
+  <section class="related-products">
+    <div class="container">
+      <h2>También te puede interesar</h2>
+      <div class="products-grid">
+        <%- include('../partials/productCard', { emoji: '🌱', name: 'Pothus Dorado', variant: 'Maceta 15cm', rating: '★★★★☆', reviews: '18', price: '$4.590', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🌿', name: 'Helecho Boston', variant: 'Maceta 18cm', rating: '★★★★☆', reviews: '15', price: '$6.790', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🍃', name: 'Calathea Orbifolia', variant: 'Maceta 16cm', rating: '★★★★★', reviews: '22', price: '$7.490', badge: '' }) %>
+        <%- include('../partials/productCard', { emoji: '🏺', name: 'Maceta Cerámica Nórdica', variant: 'Blanco · 18cm', rating: '★★★★☆', reviews: '9', price: '$5.990', badge: '' }) %>
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

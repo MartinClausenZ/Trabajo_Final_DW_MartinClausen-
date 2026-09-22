@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito — Verdia</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">verdia<span>.</span></a>
+        <nav class="nav" id="mainNav">
+          <a href="#">Plantas</a>
+          <a href="#">Macetas</a>
+          <a href="#">Decoración</a>
+          <a href="#">Guías de cuidado</a>
+        </nav>
+        <div class="header-actions">
+          <div class="search-bar">
+            <span>🔍</span>
+            <input type="text" placeholder="Buscar plantas, macetas...">
+          </div>
+          <a href="login.html" class="icon-btn" title="Mi cuenta">👤</a>
+          <a href="productCart.html" class="icon-btn" title="Carrito">
+            🛒
+            <span class="cart-count">3</span>
+          </a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART -->
+  <section class="cart-page">
+    <div class="container">
+      <h1>Tu carrito (3)</h1>
+
+      <div class="cart-layout">
+
+        <!-- Items -->
+        <div class="cart-items">
+
+          <div class="cart-item">
+            <div class="cart-item-img">🪴</div>
+            <div class="cart-item-details">
+              <h3>Monstera Deliciosa</h3>
+              <p class="variant">Maceta 20cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">1</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$8.990</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">🌱</div>
+            <div class="cart-item-details">
+              <h3>Pothus Dorado</h3>
+              <p class="variant">Maceta 15cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">2</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$9.180</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">🏺</div>
+            <div class="cart-item-details">
+              <h3>Maceta Cerámica Nórdica</h3>
+              <p class="variant">Blanco · 18cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">1</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$5.990</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Resumen -->
+        <div class="cart-summary">
+          <h2>Resumen</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>$24.160</span>
+          </div>
+          <div class="summary-row">
+            <span>Envío</span>
+            <span>$2.500</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="amount">$26.660</span>
+          </div>
+          <a href="#" class="btn btn-primary btn-full" style="margin-top: 20px;">Finalizar compra</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Verdia</h4>
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Sustentabilidad</a>
+          <a href="#">Trabaja con nosotros</a>
+        </div>
+        <div class="footer-col">
+          <h4>Ayuda</h4>
+          <a href="#">Preguntas frecuentes</a>
+          <a href="#">Envíos y entregas</a>
+          <a href="#">Devoluciones</a>
+        </div>
+        <div class="footer-col">
+          <h4>Mi cuenta</h4>
+          <a href="login.html">Iniciar sesión</a>
+          <a href="register.html">Crear cuenta</a>
+          <a href="#">Mis pedidos</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="#">hola@verdia.com</a>
+          <a href="#">+54 11 5555-1234</a>
+          <a href="#">Buenos Aires, Argentina</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Verdia. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="#" title="Instagram">📸</a>
+          <a href="#" title="Pinterest">📌</a>
+          <a href="#" title="TikTok">🎵</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

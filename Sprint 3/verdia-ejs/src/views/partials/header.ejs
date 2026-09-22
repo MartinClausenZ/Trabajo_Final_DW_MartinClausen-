@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">verdia<span>.</span></a>
+      <nav class="nav" id="mainNav">
+        <a href="/products">Plantas</a>
+        <a href="/products">Macetas</a>
+        <a href="/products">Decoración</a>
+        <a href="/products">Guías de cuidado</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" placeholder="Buscar plantas, macetas...">
+        </div>
+        <a href="/users/login" class="icon-btn" title="Mi cuenta">👤</a>
+        <a href="/products/cart" class="icon-btn" title="Carrito">
+          🛒
+          <span class="cart-count">3</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+  document.getElementById('menuToggle').addEventListener('click', function() {
+    document.getElementById('mainNav').classList.toggle('open');
+  });
+</script>

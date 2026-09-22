@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include('../partials/head', { title: 'Carrito' }) %>
+</head>
+<body>
+
+  <%- include('../partials/header') %>
+
+  <!-- CART -->
+  <section class="cart-page">
+    <div class="container">
+      <h1>Tu carrito (3)</h1>
+
+      <div class="cart-layout">
+
+        <!-- Items -->
+        <div class="cart-items">
+
+          <div class="cart-item">
+            <div class="cart-item-img">🪴</div>
+            <div class="cart-item-details">
+              <h3>Monstera Deliciosa</h3>
+              <p class="variant">Maceta 20cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">1</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$8.990</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">🌱</div>
+            <div class="cart-item-details">
+              <h3>Pothus Dorado</h3>
+              <p class="variant">Maceta 15cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">2</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$9.180</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">🏺</div>
+            <div class="cart-item-details">
+              <h3>Maceta Cerámica Nórdica</h3>
+              <p class="variant">Blanco · 18cm</p>
+              <div class="cart-item-bottom">
+                <div class="quantity-selector">
+                  <button type="button">−</button>
+                  <span class="qty-value">1</span>
+                  <button type="button">+</button>
+                </div>
+                <span class="item-price">$5.990</span>
+              </div>
+              <a href="#" class="remove-link">Quitar</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Resumen -->
+        <div class="cart-summary">
+          <h2>Resumen</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>$24.160</span>
+          </div>
+          <div class="summary-row">
+            <span>Envío</span>
+            <span>$2.500</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span class="amount">$26.660</span>
+          </div>
+          <a href="#" class="btn btn-primary btn-full" style="margin-top: 20px;">Finalizar compra</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

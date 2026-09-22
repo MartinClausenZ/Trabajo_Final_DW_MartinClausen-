@@ -1,0 +1,16 @@
+<div class="product-card">
+  <a href="/products/detail">
+    <div class="product-img">
+      <span><%= emoji || '🌿' %></span>
+      <% if (badge) { %>
+        <span class="product-badge"><%= badge %></span>
+      <% } %>
+    </div>
+    <div class="product-info">
+      <h3><%= name %></h3>
+      <p class="product-variant"><%= variant %></p>
+      <div class="product-rating"><%= rating %> <span>(<%= reviews %>)</span></div>
+      <p class="product-price"><%= price %></p>
+    </div>
+  </a>
+</div>
